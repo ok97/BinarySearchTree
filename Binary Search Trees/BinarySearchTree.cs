@@ -43,11 +43,11 @@ namespace Binary_Search_Trees
                 {
                     if (this.RightTree==null) //Check Right Tree value is > 0
                     {
-                        this.RightTree = new BinarySearchTree<T>(item);
+                        this.RightTree = new BinarySearchTree<T>(item); 
                     }
                     else
                     {
-                        this.RightTree.Insert(item);
+                        this.RightTree.Insert(item); //add
                     }
                 }
             }
@@ -55,7 +55,13 @@ namespace Binary_Search_Trees
             {
                 Console.WriteLine(ex.Message);
             }
-
+        }
+        /* UC2:- Ability to create the binary tree shown in the figure. 
+                 - Check if all are added with using size method in Binary Tree
+        */
+        public void GetSize()
+        {
+            Console.WriteLine($"Size   {1+this.leftCount+this.rightCount}"); //print tree size
         }
         public void Display() //Display Method
         {
@@ -88,10 +94,13 @@ namespace Binary_Search_Trees
             BinarySearchTree<int> bst = new BinarySearchTree<int>(56); //Create object and pass root value of tree
             bst.Insert(30); //Add Element
             bst.Insert(70);
-           
+            bst.GetSize(); //call GetSize method to print size //UC2
+
+
             bst.Display(); //call Display Method
             Console.WriteLine("         56        ---> Root \n");
             Console.WriteLine("     30     70");
+            Console.WriteLine("          ");
                
             Console.ReadLine();
         }
